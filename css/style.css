@@ -1,6 +1,74 @@
+@import url('./paleta.css');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Outfit", sans-serif;
+    color: var(--text-primary);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+}
+
+header {
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 20px;
+    gap: 20px;
+    position: relative;
+}
+
+.logo {
+    height: 90%;
+    aspect-ratio: 1 / 1;
+    margin-left: 20px;
+}
+
+.nome_projeto {
+    position: absolute;
+    left: 13%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.nome_projeto span {
+    color: var(--color-orange);
+}
+
+button {
+    padding: 10px;
+    color: var(--text-secondary);
+    background-color: rgba(216, 149, 106, 0.1);
+    border-radius: var(--radius-button);
+    border: 1px solid rgba(216, 149, 106, 0.3);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    width: fit-content;
+}
+
+button:hover {
+    background-color: rgba(216, 149, 106, 0.2);
+    border-color: rgba(216, 149, 106, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.div_login {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
 }
