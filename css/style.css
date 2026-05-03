@@ -19,27 +19,40 @@ header {
     display: flex;
     align-items: center;
     height: 100px;
-    padding: 10px;
+    width: auto;
     margin: 8px;
     border-radius: 20px;
-    gap: 20px;
-    position: relative;
 }
 
-.logo {
-    height: 90%;
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.espaco_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: fit-content;
+    gap: 10px;
+}
+
+.espaco_logo img {
+    height: 100%;
     aspect-ratio: 1 / 1;
-    margin-left: 20px;
 }
 
-.nome_projeto {
-    position: absolute;
-    left: 13%;
-    transform: translateX(-50%);
+.espaco_logo h1 {
     margin: 0;
 }
 
-.nome_projeto span {
+.espaco_logo h1 span {
     color: var(--color-orange);
 }
 
