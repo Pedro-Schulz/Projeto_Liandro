@@ -1,5 +1,25 @@
 @import url('./paleta.css');
 
+@keyframes expandirLinha {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+@keyframes afundar {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(12px);
+        text-shadow: 
+            0 1px 0 var(--text-tertiary),
+            0 2px 0 var(--text-tertiary),
+            1px 4px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* ============================================
+   GERAL
+============================================ */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,6 +44,34 @@ header {
     border-radius: 20px;
 }
 
+a {
+    position: relative; 
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 5px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+a::after {
+    content: "";
+    height: 3px;
+    background-color: var(--color-orange);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 0; 
+    transition: width 0.4s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -32,28 +80,6 @@ header {
     height: 100%;
     margin: 0 auto;
     padding: 10px;
-}
-
-.espaco_logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-    width: fit-content;
-    gap: 10px;
-}
-
-.espaco_logo img {
-    height: 100%;
-    aspect-ratio: 1 / 1;
-}
-
-.espaco_logo h1 {
-    margin: 0;
-}
-
-.espaco_logo h1 span {
-    color: var(--color-orange);
 }
 
 button {
@@ -79,9 +105,158 @@ button:active {
     transform: scale(0.95);
 }
 
+/* ============================================
+   HEADER
+============================================ */
+.espaco_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: fit-content;
+    gap: 10px;
+}
+
+.espaco_logo img {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.espaco_logo h1 {
+    margin: 0;
+}
+
+.espaco_logo h1 span {
+    color: var(--color-orange);
+}
+
 .div_login {
     margin-left: auto;
     display: flex;
     gap: 10px;
     margin-right: 20px;
+}
+
+.frase {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 100px 0;
+}
+
+.frase h1 {
+    font-size: 5vw;
+    line-height: 0.9;
+    margin: 0;
+}
+
+.line1 {
+    display: flex;
+    gap: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.line1 span {
+    color: var(--color-orange);
+    font-family: "Caveat", cursive;
+    text-transform: lowercase;
+}
+
+.line2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.line2 a::after {
+    height: 15px;
+}
+
+.line2.reveal.active a::after {
+    width: 100%;
+    animation: expandirLinha 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.line2 a,
+.line2 h1 {
+    font-size: 5vw;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.8;
+    color: var(--text-secondary);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    text-transform: lowercase;
+}
+
+.line3 {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.frase .line4 {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    font-size: 15vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 
+        0 1px 0 var(--text-tertiary),
+        0 2px 0 var(--text-tertiary),
+        0 3px 0 var(--text-tertiary),
+        0 4px 0 var(--text-tertiary),
+        0 5px 0 var(--text-tertiary),
+        0 6px 0 var(--text-tertiary),
+        0 7px 0 var(--text-tertiary),
+        0 8px 0 var(--text-tertiary),
+        1px 15px 10px rgba(0, 0, 0, 0.4),
+        1px 20px 20px rgba(0, 0, 0, 0.3),
+        1px 25px 40px rgba(0, 0, 0, 0.3),
+        1px 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.line4 span {
+    display: inline-block;
+    transition: all 0.2 ease;
+}
+
+.line4 span:hover {
+    animation: afundar 0.7s ease-out forwards;
+}
+
+.line4 .rabisco {
+    height: 200px;
+    width: auto;
+    position: absolute;
+    top: 75%;
+    transform: rotate(5deg);
+}
+
+.line4 .coroa {
+    height: 100px;
+    width: auto;
+    position: absolute;
+    left: 90%;
+    bottom: 90%;
+    transform: rotate(10deg);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+footer {
+    margin-top: 1000px;
 }
