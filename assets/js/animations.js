@@ -15,3 +15,5 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 const elements = document.querySelectorAll('.reveal');
 elements.forEach(el => observer.observe(el));
+
+// --- Página Login ---
