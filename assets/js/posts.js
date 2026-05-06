@@ -8,4 +8,4 @@ function checkHash() {
     }
 }
 
-changeLayout();
+checkHash();
