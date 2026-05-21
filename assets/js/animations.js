@@ -17,3 +17,5 @@ const elements = document.querySelectorAll('.reveal');
 elements.forEach(el => observer.observe(el));
 
 // --- Página Login ---
+
+// --- Blog ---

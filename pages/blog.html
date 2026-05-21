@@ -4,8 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeWEGlopers</title>
+
+    <link rel="stylesheet" href="../assets/styles/style.css" type="text/css">
+    <link rel="stylesheet" href="../assets/styles/blog.css" type="text/css">
+    <script src="../assets/js/animations.js" defer></script>
 </head>
 <body>
-    <h1>BLOG</h1>
+<div class="container">
+    <section class="carrossel">
+        <div class="slide pedro">
+            <img src="../assets/images/pinguim.png" alt="Participante da equipe">
+        </div>
+        <div class="slide kaue">
+            <img src="../assets/images/pinguim.png" alt="Participante da equipe">
+        </div>
+        <div class="slide leonardo">
+            <img src="../assets/images/pinguim.png" alt="Participante da equipe">
+        </div>
+        <div class="slide ryan">
+            <img src="../assets/images/pinguim.png" alt="Participante da equipe">
+        </div>
+        <div class="slide liandro">
+            <img src="../assets/images/pinguim.png" alt="Participante da equipe">
+        </div>
+    </section>
+</div>
+
+    <script>
+        const slider = document.querySelectorAll('.slide');
+
+        let currItem = 3;
+        function sliderShow() {
+            let counter = 0;
+            for(i = currItem + 1; i < slider.length; i++) {
+                counter++;
+                slider[i].style.transform = `translate(${160 * counter}px, -50%) scale(${1-.2 * counter}) perspective(20px) rotateY(-1deg)`;
+                slider[i].style.zIndex = `${-counter}`;
+                slider[i].style.filter = "brightness(70%)";
+                slider[i].style.opacity = counter > 2 ? 0 : 1;
+            }
+            counter = 0;
+            for(i = currItem - 1; i >= 0; i--) {
+                counter++;
+                slider[i].style.transform = `translate(${-160 * counter}px, -50%) scale(${1-.2 * counter}) perspective(20px) rotateY(1deg)`;
+                slider[i].style.zIndex = `${-counter}`;
+                slider[i].style.filter = "brightness(70%)";
+                slider[i].style.opacity = counter > 2 ? 0 : 1;
+            }
+        }
+
+        sliderShow();
+    </script>
 </body>
 </html>

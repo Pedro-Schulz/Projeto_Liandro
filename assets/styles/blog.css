@@ -1,0 +1,44 @@
+/* ============================================
+   CARROSSEL
+============================================ */
+
+.carrossel {
+    display: flex;
+    width: 100%;
+    cursor: grab;
+    position: relative;
+    justify-content: center;
+    margin: 20em 0;
+}
+.slide {
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.5);
+    transition: 0.5s ease;
+}
+.slide img {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    -webkit-box-reflect: below 2px
+    linear-gradient(to top, rgba(0,0,0,0.5), transparent 20%);
+}
+.pedro {
+    background-image: url(../images/pinguim.png);
+}
+.kaue {
+    background-image: url(../images/pinguim.png);
+}
+.leonardo {
+    background-image: url(../images/pinguim.png);
+}
+.ryan {
+    background-image: url(../images/pinguim.png);
+}
+.liandro {
+    background-image: url(../images/pinguim.png);
+}
